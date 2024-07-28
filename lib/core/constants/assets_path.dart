@@ -16,3 +16,4 @@ class IconsPaths {
 class ImagesPaths {
   final String countryMap = 'assets/images/country-map.svg';
 }
+
