@@ -26,6 +26,8 @@ dependencies:
   connectivity_plus: ^6.0.3
   carousel_slider:
     path: ../irane_ma/packages/flutter_carousel_slider-master_4.2
+  interactable_svg: ^0.0.7
+  responsive_sizer: ^3.3.1
 
 dev_dependencies:
   flutter_test:

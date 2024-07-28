@@ -1,4 +1,5 @@
 import 'package:irane_ma/core/utils/extensions.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 import 'locator.dart';
 import 'package:hive_flutter/adapters.dart';
@@ -36,21 +37,25 @@ class MyApp extends StatelessWidget {
           create: (context) => HomeBloc(),
         ),
       ],
-      child: MaterialApp(
-        theme: ThemeData(
-          useMaterial3: false,
-        ),
-        initialRoute: Routes.homeScreen,
-        onGenerateRoute: Routes.generateRoute,
-        debugShowCheckedModeBanner: false,
-        localizationsDelegates: const [
-          GlobalCupertinoLocalizations.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-        ],
-        supportedLocales: const [
-          Locale('fa', 'IR'),
-        ],
+      child: ResponsiveSizer(
+        builder: (context, orientation, screenType) {
+          return MaterialApp(
+            theme: ThemeData(
+              useMaterial3: false,
+            ),
+            initialRoute: Routes.homeScreen,
+            onGenerateRoute: Routes.generateRoute,
+            debugShowCheckedModeBanner: false,
+            localizationsDelegates: const [
+              GlobalCupertinoLocalizations.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+            ],
+            supportedLocales: const [
+              Locale('fa', 'IR'),
+            ],
+          );
+        },
       ),
     );
   }

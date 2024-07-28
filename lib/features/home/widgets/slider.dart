@@ -1,6 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:irane_ma/core/constants/styles.dart' as s;
+import 'package:irane_ma/locator.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 class HomeSlider extends StatefulWidget {
   final List<SliderData> data;
@@ -14,6 +16,7 @@ class HomeSlider extends StatefulWidget {
 class _HomeSliderState extends State<HomeSlider> {
   @override
   Widget build(BuildContext context) {
+    logger.e(Device.screenType);
     return CarouselSlider(
       options: CarouselOptions(
         initialPage: 0,
@@ -21,8 +24,11 @@ class _HomeSliderState extends State<HomeSlider> {
         autoPlayInterval: const Duration(seconds: 4),
         reverse: false,
         enlargeCenterPage: false,
-        height: 255,
-        // aspectRatio: 10 / 8,
+        aspectRatio: Device.screenType == ScreenType.mobile
+            ? 13 / 9
+            : Device.screenType == ScreenType.tablet
+                ? 18 / 9
+                : 22 / 9,
       ),
       items: List.generate(
         widget.data.length,
@@ -43,8 +49,7 @@ class _HomeSliderState extends State<HomeSlider> {
   }) {
     return Column(
       children: [
-        AspectRatio(
-          aspectRatio: 15 / 9,
+        Flexible(
           child: Container(
             decoration: BoxDecoration(
               color: Colors.grey,
@@ -66,6 +71,7 @@ class _HomeSliderState extends State<HomeSlider> {
                 ),
               ),
             ),
+            // Image.network(itemData.imageUrl, height: 300),
           ),
         ),
         const SizedBox(height: 10),
