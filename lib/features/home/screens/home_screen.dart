@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
               title: 'ایران ما',
               centerTitle: false,
             ),
-            Container(
+            SizedBox(
               // color: Colors.red,
               // height: 300,
               width: double.maxFinite,

@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(
               useMaterial3: false,
             ),
-            initialRoute: Routes.homeScreen,
+            initialRoute: Routes.provinceSelection,
             onGenerateRoute: Routes.generateRoute,
             debugShowCheckedModeBanner: false,
             localizationsDelegates: const [

@@ -16,7 +16,6 @@ class HomeSlider extends StatefulWidget {
 class _HomeSliderState extends State<HomeSlider> {
   @override
   Widget build(BuildContext context) {
-    logger.e(Device.screenType);
     return CarouselSlider(
       options: CarouselOptions(
         initialPage: 0,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../features/home/screens/home_screen.dart';
+import '../../features/news/screens/province_selection.dart';
 
 class Routes {
   static const String homeScreen = '/';
@@ -29,7 +30,7 @@ class Routes {
         );
       case provinceSelection:
         return MaterialPageRoute(
-          builder: (context) => const HomeScreen(),
+          builder: (context) => const ProvinceSelection(),
         );
 
       default:
