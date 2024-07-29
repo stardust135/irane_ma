@@ -5,7 +5,7 @@ import '../../features/news/screens/province_selection.dart';
 
 class Routes {
   static const String homeScreen = '/';
-  static const String countyNews = '/countyNews';
+  static const String countySelection = '/countySelection';
   static const String nationalNews = '/nationalNews';
   static const String newsDetails = '/newsDetails';
   static const String provinceSelection = '/provinceSelection';
@@ -16,7 +16,7 @@ class Routes {
         return MaterialPageRoute(
           builder: (context) => const HomeScreen(),
         );
-      case countyNews:
+      case countySelection:
         return MaterialPageRoute(
           builder: (context) => const HomeScreen(),
         );
