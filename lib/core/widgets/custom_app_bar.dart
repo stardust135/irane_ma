@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:irane_ma/core/constants/assets_path.dart';
 import 'package:irane_ma/core/constants/styles.dart' as s;
+import 'package:irane_ma/core/utils/extensions.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -18,7 +21,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
+        padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
         child: AppBar(
           backgroundColor: Colors.transparent,
           title: Text(
@@ -28,12 +31,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               color: Colors.black,
             ),
           ),
-          leading: Container(
-            width: 20,
-            height: 20,
-            decoration: BoxDecoration(
-              color: Colors.grey.shade300,
-              shape: BoxShape.circle,
+          leading: IconButton(
+            onPressed: () {
+              context.pop();
+            },
+            icon: SvgPicture.asset(
+              AssetPaths.icons.back,
+              height: 30,
             ),
           ),
           centerTitle: centerTitle,

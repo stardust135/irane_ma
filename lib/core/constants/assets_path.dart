@@ -9,11 +9,14 @@ class AssetPaths {
 }
 
 class IconsPaths {
-  final String bookmark = 'assets/icons/bookmarks.svg';
-
+  final String back = 'assets/icons/back.svg';
+  final String check = 'assets/icons/check.svg';
+  final String info = 'assets/icons/info.svg';
+  final String like = 'assets/icons/like.svg';
+  final String share = 'assets/icons/share.svg';
+  final String location = 'assets/icons/location.svg';
 }
 
 class ImagesPaths {
-  final String countryMap = 'assets/images/country-map.svg';
+  final String countryMap = 'assets/images/country_map.svg';
 }
-

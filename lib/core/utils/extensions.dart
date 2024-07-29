@@ -14,6 +14,8 @@ extension NavigationExtension on BuildContext {
         this,
         routeName,
       );
+
+  pop() => Navigator.pop(this);
 }
 
 extension GetInstantExtension on GetIt {

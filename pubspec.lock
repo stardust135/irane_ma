@@ -223,10 +223,9 @@ packages:
   interactable_svg:
     dependency: "direct main"
     description:
-      name: interactable_svg
-      sha256: b19bad65314bf55c44b10d5324e27d187c6f7c567c6a9cbdf807f4cb05e7ed7f
-      url: "https://pub.dev"
-    source: hosted
+      path: "packages/interactable_svg-0.0.7"
+      relative: true
+    source: path
     version: "0.0.7"
   intl:
     dependency: transitive
