@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../features/home/screens/home_screen.dart';
+import '../../features/news/screens/news_details.dart';
 import '../../features/news/screens/province_selection.dart';
 
 class Routes {
@@ -26,7 +27,9 @@ class Routes {
         );
       case newsDetails:
         return MaterialPageRoute(
-          builder: (context) => const HomeScreen(),
+          builder: (context) => NewsDetails(
+            news: (settings.arguments as Map<String, dynamic>)['news'],
+          ),
         );
       case provinceSelection:
         return MaterialPageRoute(

@@ -9,7 +9,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'config/routes/routes.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'core/blocs/app_bloc.dart';
-import 'features/home/bloc/home_bloc.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,9 +32,6 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => AppBloc(locator()),
         ),
-        BlocProvider(
-          create: (context) => HomeBloc(),
-        ),
       ],
       child: ResponsiveSizer(
         builder: (context, orientation, screenType) {
@@ -43,7 +39,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(
               useMaterial3: false,
             ),
-            initialRoute: Routes.provinceSelection,
+            initialRoute: Routes.homeScreen,
             onGenerateRoute: Routes.generateRoute,
             debugShowCheckedModeBanner: false,
             localizationsDelegates: const [

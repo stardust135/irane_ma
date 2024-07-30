@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:irane_ma/config/routes/routes.dart';
 import 'package:irane_ma/core/constants/styles.dart' as s;
+import 'package:irane_ma/core/entities/news.dart';
+import 'package:irane_ma/core/utils/extensions.dart';
 import 'package:irane_ma/core/widgets/custom_app_bar.dart';
 import 'package:irane_ma/features/home/widgets/news_channels.dart';
 import 'package:irane_ma/features/home/widgets/slider.dart';
@@ -15,9 +18,25 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const CustomAppBar(
-              title: 'ایران ما',
-              centerTitle: false,
+            InkWell(
+              onTap: () {
+                context.pushNamed(
+                  Routes.newsDetails,
+                  arguments: {
+                    'news': News(
+                      id: 0,
+                      text: 'https://img9.irna.ir/d/r2/2023/02/14/4/170183762.jpg?ts=1676347732353م متن',
+                      title: 'عنوان',
+                      date: '۲۳۹۸۷۴۸۳۲',
+                      imageUrl: 'https://img9.irna.ir/d/r2/2023/02/14/4/170183762.jpg?ts=1676347732353',
+                    ),
+                  },
+                );
+              },
+              child: const CustomAppBar(
+                title: 'ایران ما',
+                centerTitle: false,
+              ),
             ),
             SizedBox(
               // color: Colors.red,
@@ -56,7 +75,8 @@ class HomeScreen extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 image: const DecorationImage(
-                  image: NetworkImage('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/July_night_sky_%2835972569256%29.jpg/1280px-July_night_sky_%2835972569256%29.jpg'),
+                  image: NetworkImage(
+                      'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/July_night_sky_%2835972569256%29.jpg/1280px-July_night_sky_%2835972569256%29.jpg'),
                   fit: BoxFit.cover,
                 ),
               ),
