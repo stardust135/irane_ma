@@ -33,12 +33,12 @@ class Routes {
         return MaterialPageRoute(
           builder: (context) => const NewsDetails(
             imageUrl:
-                "https://403.online/static/media/phone.5807f7346a6bb083a368.png",
+                "https://photoshosting.ru/w241h161-hong-kong-g42dd614a1_1280-post-feature-1689853404.jpg",
             title: "چاستان لار",
             text:
                 "بسم الله الرحمن الرحیم بسم الله الرحمن الرحیم بسم الله الرحمن الرحیم بسم الله الرحمن الرحیم",
             date: "مهربان آذر",
-            news: [3, 6, 5],
+            news: [3, 6, 5,2,4,6],
           ),
         );
 
