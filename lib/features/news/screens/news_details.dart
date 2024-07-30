@@ -144,7 +144,7 @@ class NewsDetails extends StatelessWidget {
                     ),
                     const SizedBox(height: 45),
                     Text(
-                      news.text ?? '',
+                      news.content ?? '',
                       style: TextStyle(
                         fontFamily: s.Styles.fonts.yekanBakh,
                         fontWeight: FontWeight.bold,

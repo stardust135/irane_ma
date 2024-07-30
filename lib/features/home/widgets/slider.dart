@@ -1,7 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:irane_ma/core/constants/styles.dart' as s;
-import 'package:irane_ma/locator.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class HomeSlider extends StatefulWidget {
@@ -23,11 +22,12 @@ class _HomeSliderState extends State<HomeSlider> {
         autoPlayInterval: const Duration(seconds: 4),
         reverse: false,
         enlargeCenterPage: false,
-        aspectRatio: Device.screenType == ScreenType.mobile
-            ? 13 / 9
-            : Device.screenType == ScreenType.tablet
-                ? 18 / 9
-                : 22 / 9,
+        // aspectRatio: Device.screenType == ScreenType.mobile
+        //     ? 13 / 9
+        //     : Device.screenType == ScreenType.tablet
+        //         ? 18 / 9
+        //         : 22 / 9,
+        aspectRatio: 16 / 9,
       ),
       items: List.generate(
         widget.data.length,
