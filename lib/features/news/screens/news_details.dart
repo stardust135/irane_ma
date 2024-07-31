@@ -105,162 +105,87 @@ class NewsDetails extends StatelessWidget {
                   },
                 ),
               )
-            else  GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: (screenwidth / 150).toInt(), // تعداد ستون‌ها در هر ردیف
-                crossAxisSpacing: 10, // فاصله بین ستون‌ها
-                mainAxisSpacing: 10, // فاصله بین ردیف‌ها
-              ),
-              itemCount: news.length,
-              itemBuilder: (context, index) {
-                return Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8), color: Colors.yellow),
-                    // width: 120,
-                    height: 120,
-                    child: Column(children: [
-                      Container(
-                        // decoration: BoxDecoration(
-                        //   borderRadius: BorderRadius.circular(8),
-                        //   // color: Colors.grey,
-                        // ),
-                        height: 90,
-                        // width: 120,
-
+            else
+              Container(
+                constraints: BoxConstraints(
+                    maxHeight: screenheight - kToolbarHeight - 30,
+                    maxWidth: screenwidth - 50),
+                child: GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: ((screenwidth - 50) / 150).toInt().floor(),
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10,
+                  ),
+                  itemCount: news.length,
+                  itemBuilder: (context, index) {
+                    return Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8),
-                          image: DecorationImage(
-                              image: NetworkImage(
-                                imageUrl,
-                              ),
-                              fit: BoxFit.cover),
+                          color: Colors.yellow,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.shade400,
+                              blurRadius: 7,
+                              spreadRadius: -2,
+                            ),
+                          ],
                         ),
-                      ),
-                      Align(
-                        alignment: Alignment.topRight,
-                        child: Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Text(
-                            title,
-                            textAlign: TextAlign.right,
-                            style: const TextStyle(
-                              color: Color(0xff1C6758),
-                              fontSize: 13,
-                              height: 1.2,
-                              fontWeight: FontWeight.bold,
+                        child: Column(children: [
+                          Container(
+                            color: Colors.grey,
+                            height: 85,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              image: DecorationImage(
+                                  image: NetworkImage(
+                                    imageUrl,
+                                  ),
+                                  fit: BoxFit.cover),
                             ),
                           ),
-                        ),
-                      ),
-                      const SizedBox(height: 10),
-                      Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(right: 10.0),
-                            child: SvgPicture.asset(AssetPaths.icons.calendar,
-                                width: 15, height: 15),
+                          Expanded(
+                            child: Expanded(
+                              child: Align(
+                                alignment: Alignment.topRight,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      right: 10.0, top: 5, bottom: 5, left: 8),
+                                  child: Text(
+                                    title,
+                                    textAlign: TextAlign.right,
+                                    style: const TextStyle(
+                                      color: Color(0xff1C6758),
+                                      fontSize: 10,
+                                      height: 1.1,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
-                          const SizedBox(width: 4),
-                          Text(date,
-                              style: const TextStyle(
-                                  fontSize: 12, color: Color(0xffCC3636))),
-                        ],
-                      ),
-                    ]));
-              },
-            ),
+                          Row(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(right: 10.0),
+                                child: SvgPicture.asset(
+                                    AssetPaths.icons.calendar,
+                                    width: 10,
+                                    height: 10),
+                              ),
+                              const SizedBox(width: 4),
+                              Text(date,
+                                  style: const TextStyle(
+                                      fontSize: 8, color: Color(0xffCC3636))),
+                            ],
+                          ),
+                        ]));
+                  },
+                ),
+              ),
             const SizedBox(height: 20),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class NewsDatails2 extends StatelessWidget {
-  final String imageUrl;
-  final String title;
-  final String text;
-  final String date;
-  final List news;
-
-  const NewsDatails2(
-      {Key? key,
-      required this.imageUrl,
-      required this.title,
-      required this.text,
-      required this.date,
-      required this.news})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final double media = MediaQuery.of(context).size.width;
-    return Padding(
-      padding: const EdgeInsets.all(25.0),
-      child: GridView.builder(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: (media / 150).toInt(), // تعداد ستون‌ها در هر ردیف
-          crossAxisSpacing: 10, // فاصله بین ستون‌ها
-          mainAxisSpacing: 10, // فاصله بین ردیف‌ها
-        ),
-        itemCount: news.length,
-        itemBuilder: (context, index) {
-          return Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8), color: Colors.yellow),
-              // width: 120,
-              height: 120,
-              child: Column(children: [
-                Container(
-                  // decoration: BoxDecoration(
-                  //   borderRadius: BorderRadius.circular(8),
-                  //   // color: Colors.grey,
-                  // ),
-                  height: 90,
-                  // width: 120,
-
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    image: DecorationImage(
-                        image: NetworkImage(
-                          imageUrl,
-                        ),
-                        fit: BoxFit.cover),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.topRight,
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Text(
-                      title,
-                      textAlign: TextAlign.right,
-                      style: const TextStyle(
-                        color: Color(0xff1C6758),
-                        fontSize: 13,
-                        height: 1.2,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 10),
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 10.0),
-                      child: SvgPicture.asset(AssetPaths.icons.calendar,
-                          width: 15, height: 15),
-                    ),
-                    const SizedBox(width: 4),
-                    Text(date,
-                        style: const TextStyle(
-                            fontSize: 12, color: Color(0xffCC3636))),
-                  ],
-                ),
-              ]));
-        },
       ),
     );
   }

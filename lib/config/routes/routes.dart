@@ -34,7 +34,7 @@ class Routes {
           builder: (context) => const NewsDetails(
             imageUrl:
                 "https://photoshosting.ru/w241h161-hong-kong-g42dd614a1_1280-post-feature-1689853404.jpg",
-            title: "چاستان لار",
+            title: "سلامی دیگر به کاتون های قدیمی با",
             text:
                 "بسم الله الرحمن الرحیم بسم الله الرحمن الرحیم بسم الله الرحمن الرحیم بسم الله الرحمن الرحیم",
             date: "مهربان آذر",
