@@ -85,8 +85,8 @@ class HomeTabletDesktop extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Container(
-                            width: 30,
-                            height: 30,
+                            width: 25,
+                            height: 25,
                             decoration: const BoxDecoration(
                               color: Color(0xffcc3636),
                               shape: BoxShape.circle,
