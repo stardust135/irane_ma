@@ -7,11 +7,12 @@ import 'package:irane_ma/core/utils/extensions.dart';
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final bool centerTitle;
+  final Widget? action ;
 
   const CustomAppBar({
     super.key,
     required this.title,
-    this.centerTitle = true,
+    this.centerTitle = true,  this.action,
   });
 
   @override
@@ -43,6 +44,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
           centerTitle: centerTitle,
           elevation: 0,
+           actions: action != null ? [action!]: null,
         ),
       ),
     );

@@ -15,6 +15,7 @@ class IconsPaths {
   final String like = 'assets/icons/like.svg';
   final String share = 'assets/icons/share.svg';
   final String location = 'assets/icons/location.svg';
+  final String calendar = 'assets/icons/calendar.svg';
 }
 
 class ImagesPaths {

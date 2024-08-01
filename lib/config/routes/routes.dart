@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:irane_ma/features/news/screens/chaneel_info.dart';
+import 'package:irane_ma/features/news/screens/news_details.dart';
+import 'package:irane_ma/features/news/screens/news_list.dart';
 
 import '../../features/home/screens/home_screen.dart';
 import '../../features/news/screens/news_details.dart';
@@ -10,6 +13,7 @@ class Routes {
   static const String nationalNews = '/nationalNews';
   static const String newsDetails = '/newsDetails';
   static const String provinceSelection = '/provinceSelection';
+  static const String channelInfo = '/channelInfo';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -31,9 +35,28 @@ class Routes {
             news: (settings.arguments as Map<String, dynamic>)['news'],
           ),
         );
+      case channelInfo:
+        return MaterialPageRoute(
+          builder: (context) => const ChannelInfo(
+            imageUrl:
+                "https://upload.wikimedia.org/wikipedia/commons/c/c0/Presidential_candidate_Saeed_Jalili_meets_Ayatollah_Mesbah_Yazdi_02.jpg",
+            title:
+                'titletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitle',
+            text:
+                'titletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitle',
+          ),
+        );
       case provinceSelection:
         return MaterialPageRoute(
-          builder: (context) => const ProvinceSelection(),
+          builder: (context) => const NewsList(
+            imageUrl:
+                "https://upload.wikimedia.org/wikipedia/commons/c/c0/Presidential_candidate_Saeed_Jalili_meets_Ayatollah_Mesbah_Yazdi_02.jpg",
+            title: "سلامی دیگر به کاتون های قدیمی با",
+            text:
+                "بسم الله الرحمن الرحیم بسم الله الرحمن الرحیم بسم الله الرحمن الرحیم بسم الله الرحمن الرحیم",
+            date: "مهربان آذر",
+            news: [3, 6, 5, 2, 4, 6],
+          ),
         );
 
       default:
