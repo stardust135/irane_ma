@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:irane_ma/features/news/screens/chaneel_info.dart';
+import 'package:irane_ma/features/news/screens/channel_info.dart';
 import 'package:irane_ma/features/news/screens/news_details.dart';
 import 'package:irane_ma/features/news/screens/news_list.dart';
 
@@ -37,13 +37,9 @@ class Routes {
         );
       case channelInfo:
         return MaterialPageRoute(
-          builder: (context) => const ChannelInfo(
-            imageUrl:
-                "https://upload.wikimedia.org/wikipedia/commons/c/c0/Presidential_candidate_Saeed_Jalili_meets_Ayatollah_Mesbah_Yazdi_02.jpg",
-            title:
-                'titletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitle',
-            text:
-                'titletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitle',
+          builder: (context) => ChannelInfo(
+            channelInfo:
+                (settings.arguments as Map<String, dynamic>)['channelInfo'],
           ),
         );
       case provinceSelection:

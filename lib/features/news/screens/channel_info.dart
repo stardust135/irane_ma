@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:irane_ma/core/constants/styles.dart' as s;
+import 'package:irane_ma/core/entities/channel.dart';
 import 'package:irane_ma/core/widgets/custom_app_bar.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class ChannelInfo extends StatelessWidget {
-  final String imageUrl;
-  final String title;
-  final String text;
+  final Channel channelInfo;
 
   const ChannelInfo({
     super.key,
-    required this.imageUrl,
-    required this.title,
-    required this.text,
+    required this.channelInfo,
   });
 
   @override
@@ -39,7 +36,7 @@ class ChannelInfo extends StatelessWidget {
                       color: const Color(0xffeef2e6),
                       shape: BoxShape.circle,
                       image: DecorationImage(
-                        image: NetworkImage(imageUrl),
+                        image: NetworkImage(channelInfo.imageUrl ?? ''),
                         fit: BoxFit.cover,
                       ),
                       boxShadow: [
@@ -53,7 +50,7 @@ class ChannelInfo extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   Text(
-                    title,
+                    channelInfo.title ?? '',
                     style: const TextStyle(
                       color: Color(0xff1C6758),
                       fontSize: 30,
@@ -62,7 +59,7 @@ class ChannelInfo extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   Text(
-                    text,
+                    channelInfo.title ?? '',
                     style: const TextStyle(
                       color: Colors.black,
                       fontSize: 18,

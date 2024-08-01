@@ -35,7 +35,13 @@ class NewsList extends StatelessWidget {
               action: IconButton(
                 icon: SvgPicture.asset(AssetPaths.icons.info),
                 onPressed: () {
-                  context.pushNamed(Routes.channelInfo);
+                  context.pushNamed(
+                    Routes.channelInfo,
+                    // TODO
+                    arguments: {
+                      'channelInfo' : ''
+                    },
+                  );
                 },
               ),
             ),
@@ -53,7 +59,7 @@ class NewsList extends StatelessWidget {
       return Column(
         children: List.generate(
           news.length,
-              (index) {
+          (index) {
             return Container(
               margin: const EdgeInsets.symmetric(
                 horizontal: 25,
