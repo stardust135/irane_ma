@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:irane_ma/core/entities/news.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../widgets/news_channels.dart';
@@ -13,28 +14,26 @@ class HomeMobile extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
-          // color: Colors.red,
-          // height: 300,
           width: double.maxFinite,
           child: HomeSlider(
-            data: [
-              SliderData(
+            newsList: [
+              News(
                 imageUrl:
                 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/July_night_sky_%2835972569256%29.jpg/1280px-July_night_sky_%2835972569256%29.jpg',
                 title: 'ایران ما',
-                description: 'ایران  ما!!',
+                content: 'ایران  ما!!',
               ),
-              SliderData(
+              News(
                 imageUrl:
                 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Mid-Sha%27ban_1439_AH%2C_Jamkaran_Mosque%2C_Qom_05.jpg/360px-Mid-Sha%27ban_1439_AH%2C_Jamkaran_Mosque%2C_Qom_05.jpg',
                 title: 'ایران ما',
-                description: 'ایران شما!!',
+                content: 'ایران شما!!',
               ),
-              SliderData(
+              News(
                 imageUrl:
                 'https://idc0-cdn0.khamenei.ir/ndata/news/47017/B/13991013_5647017.jpg',
                 title: 'ایران ما',
-                description: 'ایران !!',
+                content: 'ایران !!',
               ),
             ],
           ),

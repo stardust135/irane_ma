@@ -4,24 +4,21 @@ import 'package:irane_ma/features/news/screens/news_details.dart';
 import 'package:irane_ma/features/news/screens/news_list.dart';
 
 import '../../features/home/screens/home_screen.dart';
+import '../../features/news/screens/city_selection.dart';
 import '../../features/news/screens/news_details.dart';
 import '../../features/news/screens/province_selection.dart';
 
 class Routes {
   static const String homeScreen = '/';
-  static const String countySelection = '/countySelection';
   static const String nationalNews = '/nationalNews';
   static const String newsDetails = '/newsDetails';
   static const String provinceSelection = '/provinceSelection';
   static const String channelInfo = '/channelInfo';
+  static const String citySelection = '/citySelection';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case homeScreen:
-        return MaterialPageRoute(
-          builder: (context) => const HomeScreen(),
-        );
-      case countySelection:
         return MaterialPageRoute(
           builder: (context) => const HomeScreen(),
         );
@@ -44,17 +41,12 @@ class Routes {
         );
       case provinceSelection:
         return MaterialPageRoute(
-          builder: (context) => const NewsList(
-            imageUrl:
-                "https://upload.wikimedia.org/wikipedia/commons/c/c0/Presidential_candidate_Saeed_Jalili_meets_Ayatollah_Mesbah_Yazdi_02.jpg",
-            title: "سلامی دیگر به کاتون های قدیمی با",
-            text:
-                "بسم الله الرحمن الرحیم بسم الله الرحمن الرحیم بسم الله الرحمن الرحیم بسم الله الرحمن الرحیم",
-            date: "مهربان آذر",
-            news: [3, 6, 5, 2, 4, 6],
-          ),
+          builder: (context) => const ProvinceSelection(),
         );
-
+      case citySelection:
+        return MaterialPageRoute(
+          builder: (context) => const CitySelection(),
+        );
       default:
         throw const FormatException('Route not found!');
     }

@@ -1,9 +1,12 @@
+import 'channel.dart';
+
 class News {
   int? id;
   String? title;
   String? date;
   String? content;
   String? imageUrl;
+  Channel? channel;
 
   News({
     this.id,
@@ -11,5 +14,6 @@ class News {
     this.date,
     this.imageUrl,
     this.content,
+    this.channel,
   });
 }

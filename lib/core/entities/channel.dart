@@ -1,7 +1,7 @@
 class Channel {
   int? id;
-  String? title;
+  String? name;
   String? imageUrl;
 
-  Channel(this.id, this.title, this.imageUrl);
+  Channel(this.id, this.name, this.imageUrl);
 }

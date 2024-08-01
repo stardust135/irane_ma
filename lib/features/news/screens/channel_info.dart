@@ -50,7 +50,7 @@ class ChannelInfo extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   Text(
-                    channelInfo.title ?? '',
+                    channelInfo.name ?? '',
                     style: const TextStyle(
                       color: Color(0xff1C6758),
                       fontSize: 30,
@@ -59,7 +59,7 @@ class ChannelInfo extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   Text(
-                    channelInfo.title ?? '',
+                    channelInfo.name ?? '',
                     style: const TextStyle(
                       color: Colors.black,
                       fontSize: 18,

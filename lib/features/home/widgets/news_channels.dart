@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:irane_ma/config/routes/routes.dart';
 import 'package:irane_ma/core/constants/styles.dart' as s;
+import 'package:irane_ma/core/utils/extensions.dart';
 import 'package:irane_ma/core/widgets/shaded_container.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -42,7 +44,13 @@ class NewsChannels extends StatelessWidget {
                 ),
                 itemCount: 7,
                 itemBuilder: (BuildContext ctx, index) {
-                  return chanelItem();
+                  return GestureDetector(
+                    behavior: HitTestBehavior.opaque,
+                    onTap: () {
+                      context.pushNamed(Routes.provinceSelection);
+                    },
+                    child: chanelItem(),
+                  );
                 },
               ),
             ),

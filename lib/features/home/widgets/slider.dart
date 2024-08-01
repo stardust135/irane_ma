@@ -1,12 +1,14 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:irane_ma/config/routes/routes.dart';
 import 'package:irane_ma/core/constants/styles.dart' as s;
-import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:irane_ma/core/entities/news.dart';
+import 'package:irane_ma/core/utils/extensions.dart';
 
 class HomeSlider extends StatefulWidget {
-  final List<SliderData> data;
+  final List<News> newsList;
 
-  const HomeSlider({super.key, required this.data});
+  const HomeSlider({super.key, required this.newsList});
 
   @override
   State<HomeSlider> createState() => _HomeSliderState();
@@ -22,20 +24,21 @@ class _HomeSliderState extends State<HomeSlider> {
         autoPlayInterval: const Duration(seconds: 4),
         reverse: false,
         enlargeCenterPage: false,
-        // aspectRatio: Device.screenType == ScreenType.mobile
-        //     ? 13 / 9
-        //     : Device.screenType == ScreenType.tablet
-        //         ? 18 / 9
-        //         : 22 / 9,
-        aspectRatio: 16 / 9,
+        aspectRatio: 14 / 9,
       ),
       items: List.generate(
-        widget.data.length,
-        (index) => Padding(
-          padding: const EdgeInsets.all(10),
-          child: sliderItem(
-            index: index,
-            itemData: widget.data[index],
+        widget.newsList.length,
+        (index) => GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          onTap: () {
+            context.pushNamed(Routes.newsDetails);
+          },
+          child: Padding(
+            padding: const EdgeInsets.all(10),
+            child: sliderItem(
+              index: index,
+              news: widget.newsList[index],
+            ),
           ),
         ),
       ),
@@ -43,7 +46,7 @@ class _HomeSliderState extends State<HomeSlider> {
   }
 
   Widget sliderItem({
-    required SliderData itemData,
+    required News news,
     required int index,
   }) {
     return Column(
@@ -65,7 +68,7 @@ class _HomeSliderState extends State<HomeSlider> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 image: DecorationImage(
-                  image: NetworkImage(itemData.imageUrl),
+                  image: NetworkImage(news.imageUrl ?? ''),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -85,16 +88,16 @@ class _HomeSliderState extends State<HomeSlider> {
                     width: 20,
                     height: 20,
                     decoration: const BoxDecoration(
-                      color: Colors.red,
+                      color: Color(0xffcc3636),
                       shape: BoxShape.circle,
                     ),
                   ),
                   const SizedBox(width: 10),
                   Text(
-                    'ایران ما',
+                    news.channel?.name ?? '',
                     style: TextStyle(
                       fontFamily: s.Styles.fonts.yekanBakh,
-                      color: Colors.red,
+                      color: const Color(0xffcc3636),
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -102,7 +105,7 @@ class _HomeSliderState extends State<HomeSlider> {
               ),
               const SizedBox(height: 10),
               Text(
-                widget.data[index].description,
+                widget.newsList[index].content ?? '',
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   fontFamily: s.Styles.fonts.yekanBakh,
@@ -116,17 +119,4 @@ class _HomeSliderState extends State<HomeSlider> {
       ],
     );
   }
-}
-
-class SliderData {
-  String imageUrl;
-  String title;
-
-  String description;
-
-  SliderData({
-    required this.imageUrl,
-    required this.title,
-    required this.description,
-  });
 }
