@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:irane_ma/features/news/screens/chaneel_info.dart';
 import 'package:irane_ma/features/news/screens/news_details.dart';
+import 'package:irane_ma/features/news/screens/news_list.dart';
 
 import '../../features/home/screens/home_screen.dart';
 import '../../features/news/screens/province_selection.dart';
@@ -35,14 +36,16 @@ class Routes {
         return MaterialPageRoute(
           builder: (context) => const ChannelInfo(
             imageUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/c/c0/Presidential_candidate_Saeed_Jalili_meets_Ayatollah_Mesbah_Yazdi_02.jpg",
-            title: 'titletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitle',
-            text: 'titletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitle',
+                "https://upload.wikimedia.org/wikipedia/commons/c/c0/Presidential_candidate_Saeed_Jalili_meets_Ayatollah_Mesbah_Yazdi_02.jpg",
+            title:
+                'titletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitle',
+            text:
+                'titletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitle',
           ),
         );
       case provinceSelection:
         return MaterialPageRoute(
-          builder: (context) => const NewsDetails(
+          builder: (context) => const NewsList(
             imageUrl:
                 "https://upload.wikimedia.org/wikipedia/commons/c/c0/Presidential_candidate_Saeed_Jalili_meets_Ayatollah_Mesbah_Yazdi_02.jpg",
             title: "سلامی دیگر به کاتون های قدیمی با",
